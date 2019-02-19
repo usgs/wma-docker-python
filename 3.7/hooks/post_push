@@ -1,0 +1,5 @@
+#!/bin/bash
+
+TAG_NAME=$DOCKER_REPO:debian-slim-stretch-python-3.7-$SOURCE_COMMIT
+docker tag $IMAGE_NAME $TAG_NAME
+docker push $TAG_NAME

@@ -1,4 +1,4 @@
-FROM python:3.6-slim-stretch
+FROM python:3.6-slim-buster
 
 ENV PYTHONUNBUFFERED 1
 ENV USER=python

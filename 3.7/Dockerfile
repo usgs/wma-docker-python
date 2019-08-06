@@ -1,4 +1,6 @@
-FROM python:3.7-slim-stretch
+FROM python:3.7-slim-buster
+
+RUN apt-get update && apt-get upgrade -y
 
 ENV PYTHONUNBUFFERED 1
 ENV USER=python

@@ -1,5 +1,7 @@
 FROM python:3.6-slim-buster
 
+RUN apt-get update && apt-get upgrade -y
+
 ENV PYTHONUNBUFFERED 1
 ENV USER=python
 ENV HOME=/home/$USER

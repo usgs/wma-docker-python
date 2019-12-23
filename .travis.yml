@@ -20,7 +20,7 @@ before_install:
 
 install:
   - docker build --tag $DOCKER_IMAGE:$service ./$service
-  - docker run -d $DOCKER_IMAGE tail -f /dev/null
+  - docker run -d $DOCKER_IMAGE:$service tail -f /dev/null
 
 script:
   - |
@@ -28,4 +28,4 @@ script:
   - sudo sh docker-bench-security.sh -c container_images
   - docker run -d --name clairDatabase arminc/clair-db
   - docker run -p 6060:6060 --link clairDatabase:postgres -d --name clair arminc/clair-local-scan:$CLAIR_SCAN_VERSION
-  - clair-scanner -c "http://127.0.0.1:6060" --ip "$(ip -4 addr show docker0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')" $DOCKER_IMAGE:latest || true
+  - clair-scanner -c "http://127.0.0.1:6060" --ip "$(ip -4 addr show docker0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')" $DOCKER_IMAGE:$service:latest || true

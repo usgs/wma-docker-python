@@ -19,7 +19,7 @@ before_install:
   - git clone https://github.com/docker/docker-bench-security.git
 
 install:
-  - docker build --tag $DOCKER_IMAGE ./$service
+  - docker build --tag $DOCKER_IMAGE:$service ./$service
   - docker run -d $DOCKER_IMAGE tail -f /dev/null
 
 script:

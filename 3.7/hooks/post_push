@@ -1,5 +1,5 @@
 #!/bin/bash
 
-TAG_NAME=$DOCKER_REPO:debian-slim-buster-python-3.7-$SOURCE_COMMIT
+TAG_NAME=TAG_NAME=$DOCKER_REPO:3.7-$SOURCE_COMMIT-$(date +'%s')
 docker tag $IMAGE_NAME $TAG_NAME
 docker push $TAG_NAME

@@ -3,7 +3,7 @@
     "name": "WMA Docker Python",
     "organization": "U.S. Geological Survey",
     "description": "WMA Docker Python - docker image to be extended by USGS WMA Python Docker images requiring a Python environment",
-    "version": "python:3.7.5-slim-buster, python:3.8.0-slim-buster",
+    "version": "3.8",
     "status": "Development",
 
     "permissions": {
